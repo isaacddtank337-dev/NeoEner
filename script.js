@@ -1,8 +1,10 @@
-// WhatsApp in international format, digits only.
-const WHATSAPP_NUMBER = '5511984260037';
+// Fixed WhatsApp destinations; keep the existing message on every CTA.
 const message = encodeURIComponent('Atendimento online');
 document.querySelectorAll('.whatsapp-link').forEach((link) => {
-  link.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+  const number = link.matches('.hero-actions .whatsapp-link')
+    ? '5511984260037'
+    : '5512992307033';
+  link.href = `https://wa.me/${number}?text=${message}`;
   link.target = '_blank';
   link.rel = 'noopener noreferrer';
 });
