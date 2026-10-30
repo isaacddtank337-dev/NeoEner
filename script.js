@@ -1,9 +1,7 @@
-// Fixed WhatsApp destinations; keep the existing message on every CTA.
+// Use the same WhatsApp number on every CTA.
+const number = '5511984260037';
 const message = encodeURIComponent('Atendimento online');
 document.querySelectorAll('.whatsapp-link').forEach((link) => {
-  const number = link.matches('.hero-actions .whatsapp-link')
-    ? '5511984260037'
-    : '5512992307033';
   link.href = `https://wa.me/${number}?text=${message}`;
   link.target = '_blank';
   link.rel = 'noopener noreferrer';
